@@ -1,9 +1,13 @@
 package br.com.fiap.scj.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Usuario {
@@ -15,7 +19,23 @@ public class Usuario {
 	private String login;
 	private String email;
 	private String senha;
+	@Enumerated(EnumType.STRING)
+	private EnumTipoUsuario tipoUsuario;
+    @ManyToOne
+	private Empresa empresa;
 	
+	public EnumTipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(EnumTipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
 	public String getEmail() {
 		return email;
 	}
