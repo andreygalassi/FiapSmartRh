@@ -45,8 +45,10 @@ public class MainController {
 		Iterable<Usuario> findAll = usuarioRepository.findAll();
 		for (Iterator<Usuario> iterator = findAll.iterator(); iterator.hasNext();) {
 			Usuario usuario = iterator.next();
-			if (usuario.getLogin().equals(login) && usuario.getSenha().equals(senha)) {
-				return true;
+			if (usuario.getLogin()!=null && usuario.getSenha()!=null) {
+				if (usuario.getLogin().equals(login) && usuario.getSenha().equals(senha)) {
+					return true;
+				}
 			}
 		}
 		return false;
