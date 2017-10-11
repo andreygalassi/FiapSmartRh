@@ -2,8 +2,7 @@ app.factory('cadastroEmpresaServices', ['$http', function($http) {
 
        
         function cadastrar(empresa, callback) {
-        	empresa.id = "21"
-        		empresa.nome = "empresa 3"
+        	
         	console.log(JSON.stringify(empresa));
             $http({
                 method:'POST',
