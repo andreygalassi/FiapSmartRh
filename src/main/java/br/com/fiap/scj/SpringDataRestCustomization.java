@@ -3,6 +3,7 @@ package br.com.fiap.scj;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import br.com.fiap.scj.model.Empresa;
 import br.com.fiap.scj.model.Nota;
@@ -11,6 +12,7 @@ import br.com.fiap.scj.model.Usuario;
 import br.com.fiap.scj.model.Vaga;
 import br.com.fiap.scj.repository.EmpresaRepository;
 
+@CrossOrigin
 @Component
 public class SpringDataRestCustomization extends RepositoryRestConfigurerAdapter {
 
